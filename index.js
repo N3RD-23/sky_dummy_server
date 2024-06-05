@@ -9,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  user:"shunnu",
+  user:"root",
   host:"localhost",
-  password: "ASqw21@!",
-  database: "player_registration",
+  password: "",
+  database: "player_registeration",
 });
 
 db.connect((err) => {
