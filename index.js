@@ -35,6 +35,7 @@ app.post("/create", (req, res) => {
     p3_fullname, p3_nid, p3_ign, p3_igid,
     p4_fullname, p4_nid, p4_ign, p4_igid
   } = req.body;
+  res.send(req.body);
 
   const query = `
     INSERT INTO players (
