@@ -15,6 +15,13 @@ const db = mysql.createConnection({
   database: "player_registration",
 });
 
+// const db = mysql.createConnection({
+//   user:"root",
+//   host:"localhost",
+//   password: "",
+//   database: "player_registeration",
+// });
+
 db.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
@@ -35,7 +42,7 @@ app.post("/create", (req, res) => {
     p3_fullname, p3_nid, p3_ign, p3_igid,
     p4_fullname, p4_nid, p4_ign, p4_igid
   } = req.body;
-  res.send(req.body);
+  // res.send(req.body);
 
   const query = `
     INSERT INTO players (
@@ -59,7 +66,7 @@ app.post("/create", (req, res) => {
     (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).send('Error registering team');
+        res.status(500).send(err);
       } else {
         console.log("Registered New Team");
         res.status(201).send('Team registered successfully');
