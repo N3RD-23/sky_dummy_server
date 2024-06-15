@@ -40,7 +40,8 @@ app.post("/create", (req, res) => {
     p1_fullname, p1_nid, p1_ign, p1_igid,
     p2_fullname, p2_nid, p2_ign, p2_igid,
     p3_fullname, p3_nid, p3_ign, p3_igid,
-    p4_fullname, p4_nid, p4_ign, p4_igid
+    p4_fullname, p4_nid, p4_ign, p4_igid,
+    sub_fullname, sub_nid, sub_ign, sub_igid
   } = req.body;
   // res.send(req.body);
 
@@ -50,8 +51,9 @@ app.post("/create", (req, res) => {
       p1_fullname, p1_nid, p1_ign, p1_igid,
       p2_fullname, p2_nid, p2_ign, p2_igid,
       p3_fullname, p3_nid, p3_ign, p3_igid,
-      p4_fullname, p4_nid, p4_ign, p4_igid
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      p4_fullname, p4_nid, p4_ign, p4_igid,
+      sub_fullname, sub_nid, sub_ign, sub_igid,
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
   db.query(
@@ -61,7 +63,8 @@ app.post("/create", (req, res) => {
       p1_fullname, p1_nid, p1_ign, p1_igid,
       p2_fullname, p2_nid, p2_ign, p2_igid,
       p3_fullname, p3_nid, p3_ign, p3_igid,
-      p4_fullname, p4_nid, p4_ign, p4_igid
+      p4_fullname, p4_nid, p4_ign, p4_igid,
+      sub_fullname, sub_nid, sub_ign, sub_igid
     ],
     (err, result) => {
       if (err) {
